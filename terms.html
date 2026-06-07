@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms &amp; Disclaimer — VeridAI</title>
+  <meta name="description" content="VeridAI terms of service and legal disclaimer." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: { 900: '#0a0a0f', 800: '#0d1117', 700: '#16181f', 500: '#3a3f4b', 300: '#9b96b8', 100: '#e6e3f0' },
+            violet: { DEFAULT: '#6e40c9', light: '#9b7ee0', dim: '#4a2b85' },
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            body: ['Manrope', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #0a0a0f;
+      color: #e6e3f0;
+      font-family: 'Manrope', system-ui, sans-serif;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+    }
+    .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.025em; }
+    .italic-display { font-family: 'Fraunces', serif; font-style: italic; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .rise { animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+
+    .link-anim { position: relative; display: inline-block; }
+    .link-anim::after {
+      content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px;
+      background: currentColor; transform: scaleX(0); transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .link-anim:hover::after { transform: scaleX(1); transform-origin: left; }
+  </style>
+</head>
+
+<body class="relative min-h-screen">
+
+  <nav class="relative z-10 px-6 sm:px-10 py-7 max-w-6xl mx-auto flex items-center justify-between">
+    <a href="index.html" class="flex items-baseline gap-2">
+      <span class="display text-2xl text-ink-100">Verid<span class="text-violet-light">AI</span></span>
+    </a>
+    <div class="flex items-center gap-7 text-sm text-ink-300">
+      <a href="index.html" class="link-anim hover:text-ink-100 transition-colors">Home</a>
+      <a href="privacy.html" class="link-anim hover:text-ink-100 transition-colors">Privacy</a>
+    </div>
+  </nav>
+
+  <main class="relative z-10 px-6 sm:px-10 py-16 sm:py-24 max-w-3xl mx-auto">
+    <p class="rise delay-1 text-sm tracking-[0.2em] uppercase text-violet-light/80 mb-6 font-medium">Terms &amp; disclaimer</p>
+    <h1 class="rise delay-2 display text-5xl sm:text-6xl text-ink-100 mb-10 leading-[1.05]">
+      A tool, <span class="italic-display text-violet-light">not a lawyer</span>.
+    </h1>
+
+    <div class="rise delay-3 rounded-xl border border-amber-500/30 bg-amber-500/[0.04] p-8 sm:p-10 mb-12">
+      <p class="text-sm tracking-[0.18em] uppercase text-amber-300/90 mb-4 font-medium">Important disclaimer</p>
+      <p class="text-ink-100 text-lg leading-relaxed mb-4">
+        VeridAI is not a substitute for qualified legal advice.
+      </p>
+      <p class="text-ink-300 leading-relaxed">
+        The analyses, summaries, and answers VeridAI provides are produced by artificial intelligence and are intended as a general aid to understanding contract content — not as legal counsel. AI can make mistakes, miss context, or misinterpret jurisdiction-specific language. For any legally binding decision, dispute, or commitment of significant value, consult a qualified lawyer licensed in your jurisdiction.
+      </p>
+    </div>
+
+    <div class="rise delay-3 mb-12">
+      <h2 class="display text-2xl text-ink-100 mb-5">Full terms in preparation</h2>
+      <p class="text-ink-300 leading-relaxed mb-4">
+        Our full terms of service are being finalized ahead of VeridAI's public launch. They'll cover acceptable use, account responsibilities, subscription and refund terms, intellectual property, limitation of liability, and the legal framework governing your use of the app.
+      </p>
+      <p class="text-ink-300 leading-relaxed">
+        The complete document will be published here before the app becomes available on the Google Play Store.
+      </p>
+    </div>
+
+    <div class="rise delay-3 mb-12">
+      <h2 class="display text-2xl text-ink-100 mb-5">In the meantime, the essentials</h2>
+      <ul class="space-y-4 text-ink-300 leading-relaxed">
+        <li class="pl-5 border-l border-violet/40">VeridAI is a contract analysis tool. It does not provide legal advice and does not establish an attorney-client relationship.</li>
+        <li class="pl-5 border-l border-violet/40">You are responsible for verifying the accuracy of any analysis before acting on it. Always consult a qualified lawyer for important decisions.</li>
+        <li class="pl-5 border-l border-violet/40">VeridAI is provided "as is" without warranties of any kind. Foxar Ltd is not liable for decisions made based on AI-generated output.</li>
+        <li class="pl-5 border-l border-violet/40">By using VeridAI you agree to use it lawfully and only for documents you have a legitimate right to access.</li>
+      </ul>
+    </div>
+
+    <div class="rise delay-3 text-ink-300 leading-relaxed">
+      <p class="mb-4">
+        Questions about these terms? Reach us at
+        <a href="mailto:support@veridai.app" class="text-violet-light hover:text-ink-100 transition-colors link-anim">support@veridai.app</a>.
+      </p>
+      <p class="text-sm text-ink-300/70 mt-10">
+        VeridAI is operated by Foxar Ltd, registered in the United Kingdom.
+      </p>
+    </div>
+  </main>
+
+  <footer class="relative z-10 px-6 sm:px-10 py-12 max-w-6xl mx-auto border-t border-ink-500/15 mt-20">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <p class="text-xs text-ink-300/70">© <span id="year"></span> Foxar Ltd. All rights reserved.</p>
+      <div class="flex gap-6 text-sm">
+        <a href="index.html" class="text-ink-300 hover:text-violet-light transition-colors">Home</a>
+        <a href="privacy.html" class="text-ink-300 hover:text-violet-light transition-colors">Privacy</a>
+        <a href="mailto:support@veridai.app" class="text-ink-300 hover:text-violet-light transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

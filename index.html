@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeridAI — Your Contract Assistant</title>
+  <meta name="description" content="VeridAI is an AI-powered contract analysis app that helps you understand legal documents in seconds. Scan, analyze, and ask questions about your contracts." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: {
+              900: '#0a0a0f',
+              800: '#0d1117',
+              700: '#16181f',
+              500: '#3a3f4b',
+              300: '#9b96b8',
+              100: '#e6e3f0',
+            },
+            violet: {
+              DEFAULT: '#6e40c9',
+              light: '#9b7ee0',
+              dim: '#4a2b85',
+            },
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            body: ['Manrope', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #0a0a0f;
+      color: #e6e3f0;
+      font-family: 'Manrope', system-ui, sans-serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Subtle grain texture across the whole page */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+    }
+
+    /* Soft violet glow behind the hero */
+    .hero-glow {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(110, 64, 201, 0.18) 0%, rgba(110, 64, 201, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.025em; }
+    .italic-display { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+
+    /* Subtle entrance animation */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .rise { animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+    .delay-5 { animation-delay: 0.7s; }
+
+    /* Feature card hover */
+    .feature {
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .feature:hover {
+      border-color: rgba(155, 126, 224, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* Link underline animation */
+    .link-anim {
+      position: relative;
+      display: inline-block;
+    }
+    .link-anim::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .link-anim:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="relative z-10 px-6 sm:px-10 py-7 max-w-6xl mx-auto flex items-center justify-between">
+    <a href="index.html" class="flex items-baseline gap-2 group">
+      <span class="display text-2xl text-ink-100">Verid<span class="text-violet-light">AI</span></span>
+    </a>
+    <div class="flex items-center gap-7 text-sm text-ink-300">
+      <a href="#what" class="link-anim hover:text-ink-100 transition-colors">What it does</a>
+      <a href="privacy.html" class="link-anim hover:text-ink-100 transition-colors hidden sm:inline-block">Privacy</a>
+      <a href="terms.html" class="link-anim hover:text-ink-100 transition-colors hidden sm:inline-block">Terms</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative px-6 sm:px-10 pt-16 sm:pt-24 pb-20 max-w-6xl mx-auto">
+    <div class="hero-glow"></div>
+
+    <div class="relative z-10 max-w-3xl">
+      <p class="rise delay-1 text-sm tracking-[0.2em] uppercase text-violet-light/80 mb-8 font-medium">Contract analysis, made human</p>
+
+      <h1 class="rise delay-2 display text-5xl sm:text-7xl md:text-8xl leading-[0.95] text-ink-100 mb-10">
+        Understand any contract <span class="italic-display text-violet-light">in seconds</span>, not hours.
+      </h1>
+
+      <p class="rise delay-3 text-lg sm:text-xl text-ink-300 leading-relaxed mb-12 max-w-2xl">
+        VeridAI is an AI-powered contract assistant. Scan a document, get a plain-language analysis, ask questions about specific clauses — all on your phone, in five languages.
+      </p>
+
+      <div class="rise delay-4 flex flex-wrap items-center gap-5">
+        <span class="inline-flex items-center gap-3 px-6 py-3 rounded-md bg-ink-700 border border-ink-500/40 text-ink-300 text-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Launching soon on Google Play
+        </span>
+        <a href="#what" class="text-violet-light hover:text-ink-100 transition-colors link-anim text-sm">Learn more ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT IT DOES ===== -->
+  <section id="what" class="relative z-10 px-6 sm:px-10 py-20 max-w-6xl mx-auto">
+    <p class="text-sm tracking-[0.2em] uppercase text-violet-light/80 mb-6 font-medium">What it does</p>
+    <h2 class="display text-3xl sm:text-5xl text-ink-100 mb-16 max-w-3xl leading-tight">
+      Three things, done <span class="italic-display text-violet-light">well</span>.
+    </h2>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+      <article class="feature rounded-xl border border-ink-500/25 bg-ink-800/50 p-7">
+        <div class="text-violet-light text-xs tracking-widest uppercase mb-5">01 — Scan</div>
+        <h3 class="display text-2xl text-ink-100 mb-3">Point your camera</h3>
+        <p class="text-ink-300 text-[15px] leading-relaxed">
+          Snap a photo of a paper contract or upload a PDF. Built-in OCR handles the rest, in five languages.
+        </p>
+      </article>
+
+      <article class="feature rounded-xl border border-ink-500/25 bg-ink-800/50 p-7">
+        <div class="text-violet-light text-xs tracking-widest uppercase mb-5">02 — Analyze</div>
+        <h3 class="display text-2xl text-ink-100 mb-3">Read between the lines</h3>
+        <p class="text-ink-300 text-[15px] leading-relaxed">
+          An AI walks you through the document — flags risky clauses, hidden fees, exit conditions, and what they mean in plain language.
+        </p>
+      </article>
+
+      <article class="feature rounded-xl border border-ink-500/25 bg-ink-800/50 p-7">
+        <div class="text-violet-light text-xs tracking-widest uppercase mb-5">03 — Ask</div>
+        <h3 class="display text-2xl text-ink-100 mb-3">Question anything</h3>
+        <p class="text-ink-300 text-[15px] leading-relaxed">
+          Wondering what a specific clause really means? Ask. VeridAI answers based on the actual contents of your contract.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== TRUST / DETAILS ===== -->
+  <section class="relative z-10 px-6 sm:px-10 py-20 max-w-6xl mx-auto border-t border-ink-500/15">
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <p class="text-sm tracking-[0.2em] uppercase text-violet-light/80 mb-6 font-medium">Privacy first</p>
+        <h2 class="display text-3xl sm:text-4xl text-ink-100 mb-6 leading-tight">
+          Your contracts stay <span class="italic-display text-violet-light">yours</span>.
+        </h2>
+        <p class="text-ink-300 leading-relaxed">
+          We don't sell your data. We don't train models on it. Documents are processed securely, accessible only to you, and synchronized across your devices through encrypted cloud storage.
+        </p>
+        <a href="privacy.html" class="inline-block mt-6 text-violet-light hover:text-ink-100 transition-colors link-anim text-sm">Read our privacy policy →</a>
+      </div>
+
+      <div>
+        <p class="text-sm tracking-[0.2em] uppercase text-violet-light/80 mb-6 font-medium">Not legal advice</p>
+        <h2 class="display text-3xl sm:text-4xl text-ink-100 mb-6 leading-tight">
+          Assistance, <span class="italic-display text-violet-light">not a lawyer</span>.
+        </h2>
+        <p class="text-ink-300 leading-relaxed">
+          VeridAI gives you a clearer view of what a contract says — but it's a tool, not a substitute for legal counsel. For high-stakes decisions, talk to a qualified professional.
+        </p>
+        <a href="terms.html" class="inline-block mt-6 text-violet-light hover:text-ink-100 transition-colors link-anim text-sm">Read the disclaimer →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="relative z-10 px-6 sm:px-10 pt-20 pb-12 max-w-6xl mx-auto border-t border-ink-500/15">
+    <div class="grid md:grid-cols-3 gap-12 mb-14">
+      <div>
+        <span class="display text-xl text-ink-100">Verid<span class="text-violet-light">AI</span></span>
+        <p class="text-ink-300 text-sm mt-3 max-w-xs leading-relaxed">
+          An AI-powered contract assistant. Made with care by Foxar Ltd, United Kingdom.
+        </p>
+      </div>
+      <div>
+        <p class="text-xs tracking-[0.2em] uppercase text-ink-300/70 mb-4">Legal</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="privacy.html" class="text-ink-100 hover:text-violet-light transition-colors">Privacy policy</a></li>
+          <li><a href="terms.html" class="text-ink-100 hover:text-violet-light transition-colors">Terms &amp; disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs tracking-[0.2em] uppercase text-ink-300/70 mb-4">Contact</p>
+        <a href="mailto:support@veridai.app" class="text-ink-100 hover:text-violet-light transition-colors text-sm">support@veridai.app</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-8 border-t border-ink-500/15 gap-4">
+      <p class="text-xs text-ink-300/70">© <span id="year"></span> Foxar Ltd. All rights reserved.</p>
+      <p class="text-xs text-ink-300/70 italic-display">Verid<span class="text-violet-light/70">AI</span> · from Latin <em>veritas</em>, truth.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
