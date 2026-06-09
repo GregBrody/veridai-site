@@ -4,127 +4,174 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — VeridAI</title>
-  <meta name="description" content="VeridAI privacy policy — how we handle your contracts and personal data." />
-
+  <meta name="description" content="How VeridAI and Foxar Ltd collect, use and protect your personal data." />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: { 900: '#0a0a0f', 800: '#0d1117', 700: '#16181f', 500: '#3a3f4b', 300: '#9b96b8', 100: '#e6e3f0' },
-            violet: { DEFAULT: '#6e40c9', light: '#9b7ee0', dim: '#4a2b85' },
-          },
-          fontFamily: {
-            display: ['Fraunces', 'serif'],
-            body: ['Manrope', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      background-color: #0a0a0f;
-      color: #e6e3f0;
-      font-family: 'Manrope', system-ui, sans-serif;
-      letter-spacing: -0.01em;
-      -webkit-font-smoothing: antialiased;
+    :root {
+      --violet: #6e40c9;
+      --violet-light: #9a6df0;
     }
-    body::before {
-      content: '';
-      position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.04;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
-    }
-    .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.025em; }
-    .italic-display { font-family: 'Fraunces', serif; font-style: italic; }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .rise { animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.25s; }
-    .delay-3 { animation-delay: 0.4s; }
-
-    .link-anim { position: relative; display: inline-block; }
-    .link-anim::after {
-      content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px;
-      background: currentColor; transform: scaleX(0); transform-origin: right;
-      transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-    }
-    .link-anim:hover::after { transform: scaleX(1); transform-origin: left; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background-color: #0c0a13; color: #d7d3e0; }
+    h1, h2, h3 { font-family: 'Fraunces', serif; color: #f4f1fb; letter-spacing: -0.01em; }
+    .prose-legal h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2.75rem; margin-bottom: 0.9rem; }
+    .prose-legal h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1.75rem; margin-bottom: 0.6rem; color: #c9bdf0; }
+    .prose-legal p { margin-bottom: 1rem; line-height: 1.75; }
+    .prose-legal ul { margin: 0.5rem 0 1.25rem; padding-left: 1.25rem; }
+    .prose-legal li { margin-bottom: 0.5rem; line-height: 1.7; }
+    .prose-legal ul li { list-style: none; position: relative; }
+    .prose-legal ul li::before { content: ''; position: absolute; left: -1rem; top: 0.7rem; width: 5px; height: 5px; border-radius: 9999px; background: var(--violet-light); }
+    .prose-legal a { color: var(--violet-light); text-decoration: underline; text-underline-offset: 2px; }
+    .prose-legal strong { color: #f4f1fb; font-weight: 600; }
+    .fill { background: rgba(110,64,201,0.18); border-radius: 4px; padding: 0 4px; color: #d9ccff; }
   </style>
 </head>
+<body class="antialiased">
 
-<body class="relative min-h-screen">
-
-  <nav class="relative z-10 px-6 sm:px-10 py-7 max-w-6xl mx-auto flex items-center justify-between">
-    <a href="index.html" class="flex items-baseline gap-2">
-      <span class="display text-2xl text-ink-100">Verid<span class="text-violet-light">AI</span></span>
-    </a>
-    <div class="flex items-center gap-7 text-sm text-ink-300">
-      <a href="index.html" class="link-anim hover:text-ink-100 transition-colors">Home</a>
-      <a href="terms.html" class="link-anim hover:text-ink-100 transition-colors">Terms</a>
+  <!-- Header -->
+  <header class="border-b border-white/10">
+    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg font-semibold text-white" style="background: linear-gradient(135deg, #6e40c9, #9a6df0);">V</span>
+        <span class="text-lg font-semibold text-white" style="font-family:'Fraunces',serif;">VeridAI</span>
+      </a>
+      <nav class="flex items-center gap-5 text-sm">
+        <a href="privacy.html" class="text-white">Privacy</a>
+        <a href="terms.html" class="text-white/60 hover:text-white transition">Terms</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main class="relative z-10 px-6 sm:px-10 py-16 sm:py-24 max-w-3xl mx-auto">
-    <p class="rise delay-1 text-sm tracking-[0.2em] uppercase text-violet-light/80 mb-6 font-medium">Privacy policy</p>
-    <h1 class="rise delay-2 display text-5xl sm:text-6xl text-ink-100 mb-10 leading-[1.05]">
-      How we handle <span class="italic-display text-violet-light">your data</span>.
-    </h1>
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 py-14">
+    <p class="text-sm uppercase tracking-widest text-violet-300/70 mb-3">Legal</p>
+    <h1 class="text-4xl sm:text-5xl font-semibold mb-4">Privacy Policy</h1>
+    <p class="text-white/50 text-sm mb-12">Last updated: 8 June 2026</p>
 
-    <div class="rise delay-3 rounded-xl border border-ink-500/25 bg-ink-800/50 p-8 sm:p-10 mb-12">
-      <p class="text-sm tracking-[0.18em] uppercase text-violet-light/80 mb-4 font-medium">In preparation</p>
-      <p class="text-ink-100 text-lg leading-relaxed mb-4">
-        Our full privacy policy is being finalized ahead of VeridAI's public launch.
-      </p>
-      <p class="text-ink-300 leading-relaxed">
-        We're documenting exactly how we collect, store, process, and protect your data — including the contracts you analyze, the questions you ask, and the account information you provide. The complete policy will be published here before the app becomes available on the Google Play Store.
-      </p>
-    </div>
+    <div class="prose-legal">
 
-    <div class="rise delay-3 mb-12">
-      <h2 class="display text-2xl text-ink-100 mb-5">In the meantime, the essentials</h2>
-      <ul class="space-y-4 text-ink-300 leading-relaxed">
-        <li class="pl-5 border-l border-violet/40">We do not sell, share, or trade your personal data with third parties for marketing purposes.</li>
-        <li class="pl-5 border-l border-violet/40">We do not train our AI models on your contracts or your queries.</li>
-        <li class="pl-5 border-l border-violet/40">Your data is accessible only to you, secured by industry-standard encryption in transit and at rest.</li>
-        <li class="pl-5 border-l border-violet/40">You can delete your account and all associated data at any time, directly from the app.</li>
+      <p>This Privacy Policy explains how <strong>Foxar Ltd</strong> ("we", "us", "our") collects, uses, shares and protects your personal data when you use the <strong>VeridAI</strong> mobile application and the website at veridai.app (together, the "Service"). We are committed to protecting your privacy and handling your data in an open and transparent manner.</p>
+
+      <p>VeridAI is an AI-powered tool that helps you understand contracts and other documents. Because you may upload documents that contain sensitive or confidential information, we take particular care over how that content is handled — see the section <a href="#documents">"Documents you upload"</a> below.</p>
+
+      <h2>1. Who we are</h2>
+      <p>The data controller responsible for your personal data is:</p>
+      <ul>
+        <li><strong>Foxar Ltd</strong>, a company registered in England and Wales.</li>
+        <li>Company registration number: 17160803</li>
+        <li>Registered office: 24 Tremayne Road, Nottingham, NG8 4HQ</li>
+        <li>Contact: <a href="mailto:support@veridai.app">support@veridai.app</a></li>
       </ul>
-    </div>
 
-    <div class="rise delay-3 text-ink-300 leading-relaxed">
-      <p class="mb-4">
-        Questions about how we handle your data? Reach us at
-        <a href="mailto:support@veridai.app" class="text-violet-light hover:text-ink-100 transition-colors link-anim">support@veridai.app</a>.
-      </p>
-      <p class="text-sm text-ink-300/70 mt-10">
-        VeridAI is operated by Foxar Ltd, registered in the United Kingdom.
-      </p>
+      <h2>2. The information we collect</h2>
+      <p>We collect the following categories of information:</p>
+
+      <h3>Information you provide</h3>
+      <ul>
+        <li><strong>Account information</strong> — the email address you use to register and authenticate. Authentication is handled through our backend provider (Supabase).</li>
+        <li><strong>Documents and content</strong> — the contracts, agreements and other documents (and any text or images extracted from them) that you submit for analysis or ask questions about.</li>
+        <li><strong>Communications</strong> — any information you send us when you contact support.</li>
+      </ul>
+
+      <h3>Information collected automatically</h3>
+      <ul>
+        <li><strong>Usage data</strong> — how you use the app, including the number of analyses or scans performed and your subscription tier.</li>
+        <li><strong>Device and technical data</strong> — device type, operating system, app version, language settings, and diagnostic or crash information.</li>
+        <li><strong>Advertising identifiers</strong> — where ads are shown (see section 6), an advertising identifier and related data may be processed.</li>
+      </ul>
+
+      <h3>Payment information</h3>
+      <p>Subscriptions are processed through the Google Play billing system (and, in future, through our payments provider). <strong>We do not collect or store your card or bank details.</strong> We receive confirmation of your subscription status and a transaction identifier only.</p>
+
+      <h2 id="documents">3. Documents you upload</h2>
+      <p>The documents you submit are the heart of the Service, and we treat them with care:</p>
+      <ul>
+        <li>Your documents are processed in order to generate the analysis, summary or answers you request.</li>
+        <li>To produce an analysis, the text of your document is transmitted to our third-party AI processing provider (see section 5). It is not used to train third-party AI models.</li>
+        <li>Where you have an account, your analyses may be saved to your account so you can access them again later. You can delete saved analyses at any time from within the app.</li>
+        <li>You are responsible for the documents you upload. Please do not upload content that you are not entitled to share, and be aware that documents may contain personal data relating to other people.</li>
+      </ul>
+
+      <h2>4. How and why we use your information</h2>
+      <p>We use your information for the following purposes, relying on the lawful bases set out under the UK GDPR and EU GDPR:</p>
+      <ul>
+        <li><strong>To provide the Service</strong> — analysing documents, answering your questions and saving your results. Lawful basis: performance of our contract with you.</li>
+        <li><strong>To manage your account</strong> — registration, authentication and subscription management. Lawful basis: performance of a contract.</li>
+        <li><strong>To show advertising</strong> on the free tier. Lawful basis: your consent and/or our legitimate interests (see section 6).</li>
+        <li><strong>To maintain, secure and improve the Service</strong>, including diagnosing faults and preventing abuse. Lawful basis: our legitimate interests in running a reliable and secure service.</li>
+        <li><strong>To comply with legal obligations</strong> and to respond to lawful requests. Lawful basis: compliance with a legal obligation.</li>
+      </ul>
+
+      <h2>5. AI processing and third-party providers</h2>
+      <p>VeridAI uses third-party artificial intelligence providers to analyse documents and answer questions. When you request an analysis, the relevant text is sent to these providers for processing. We currently route requests through <strong>OpenRouter</strong>, which in turn passes them to large language model providers (for example, models operated by OpenAI). The specific models used may change over time as we improve the Service.</p>
+      <p>These providers act as our processors for the purpose of generating your results. Some of them are based outside the UK and the EEA — see section 8 on international transfers.</p>
+
+      <h2>6. Advertising</h2>
+      <p>On the free tier, we display advertising using <strong>Google AdMob</strong>. Depending on your settings and consent, AdMob may process device and advertising identifiers to serve and measure ads. Where required by law, we will ask for your consent before personalised ads are shown, and you can change your choice in your device settings. Users on the Ad-Free and Premium tiers do not see ads.</p>
+      <p>For more information about how Google handles data, see Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+      <h2>7. Who we share your information with</h2>
+      <p>We do not sell your personal data. We share information only with service providers who help us operate the Service, under appropriate contractual safeguards:</p>
+      <ul>
+        <li><strong>Supabase</strong> — backend, authentication, database and storage.</li>
+        <li><strong>OpenRouter</strong> and the underlying AI model providers — document analysis and question answering.</li>
+        <li><strong>Google</strong> (Play billing and AdMob) — subscriptions and advertising.</li>
+        <li>Our payments provider, where used in future — subscription management.</li>
+      </ul>
+      <p>We may also disclose information where required by law, to enforce our terms, or to protect the rights, safety and property of our users or others.</p>
+
+      <h2>8. International transfers</h2>
+      <p>Some of our providers process data outside the United Kingdom and the European Economic Area, including in the United States. Where we transfer personal data internationally, we rely on appropriate safeguards such as the UK International Data Transfer Agreement, the EU Standard Contractual Clauses, or an adequacy decision, to ensure your data remains protected.</p>
+
+      <h2>9. How long we keep your information</h2>
+      <p>We keep your personal data only for as long as necessary for the purposes described in this policy:</p>
+      <ul>
+        <li>Account information is kept while your account remains active.</li>
+        <li>Saved analyses are kept until you delete them or close your account.</li>
+        <li>When you delete content or your account, we remove it from our active systems, and it is deleted from backups within 30 days.</li>
+        <li>We may retain limited information for longer where required to comply with legal obligations or to resolve disputes.</li>
+      </ul>
+
+      <h2>10. Your rights</h2>
+      <p>Under the UK GDPR and EU GDPR you have the right to:</p>
+      <ul>
+        <li>access the personal data we hold about you;</li>
+        <li>request correction of inaccurate or incomplete data;</li>
+        <li>request erasure of your data;</li>
+        <li>object to, or request restriction of, our processing;</li>
+        <li>request portability of the data you have provided;</li>
+        <li>withdraw consent at any time, where processing is based on consent.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="mailto:support@veridai.app">support@veridai.app</a>. You also have the right to lodge a complaint with the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>, or with your local supervisory authority if you are in the EEA.</p>
+
+      <h2>11. How we protect your information</h2>
+      <p>We use appropriate technical and organisational measures to protect your data, including encryption in transit, access controls and reputable infrastructure providers. No method of transmission or storage is completely secure, but we work to protect your information and to respond promptly to any security incident.</p>
+
+      <h2>12. Children</h2>
+      <p>The Service is not directed at children and is not intended for anyone under the age of 16. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us so we can delete it.</p>
+
+      <h2>13. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last updated" date above and, where appropriate, notify you within the app. We encourage you to review this policy periodically.</p>
+
+      <h2>14. Contact us</h2>
+      <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at <a href="mailto:support@veridai.app">support@veridai.app</a>.</p>
+
     </div>
   </main>
 
-  <footer class="relative z-10 px-6 sm:px-10 py-12 max-w-6xl mx-auto border-t border-ink-500/15 mt-20">
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-      <p class="text-xs text-ink-300/70">© <span id="year"></span> Foxar Ltd. All rights reserved.</p>
-      <div class="flex gap-6 text-sm">
-        <a href="index.html" class="text-ink-300 hover:text-violet-light transition-colors">Home</a>
-        <a href="terms.html" class="text-ink-300 hover:text-violet-light transition-colors">Terms</a>
-        <a href="mailto:support@veridai.app" class="text-ink-300 hover:text-violet-light transition-colors">Contact</a>
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/40">
+      <p>© 2026 Foxar Ltd. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+        <a href="terms.html" class="hover:text-white transition">Terms</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

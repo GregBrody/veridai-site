@@ -3,138 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms &amp; Disclaimer — VeridAI</title>
-  <meta name="description" content="VeridAI terms of service and legal disclaimer." />
-
+  <title>Terms of Service — VeridAI</title>
+  <meta name="description" content="The terms that govern your use of VeridAI, provided by Foxar Ltd." />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: { 900: '#0a0a0f', 800: '#0d1117', 700: '#16181f', 500: '#3a3f4b', 300: '#9b96b8', 100: '#e6e3f0' },
-            violet: { DEFAULT: '#6e40c9', light: '#9b7ee0', dim: '#4a2b85' },
-          },
-          fontFamily: {
-            display: ['Fraunces', 'serif'],
-            body: ['Manrope', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      background-color: #0a0a0f;
-      color: #e6e3f0;
-      font-family: 'Manrope', system-ui, sans-serif;
-      letter-spacing: -0.01em;
-      -webkit-font-smoothing: antialiased;
+    :root {
+      --violet: #6e40c9;
+      --violet-light: #9a6df0;
     }
-    body::before {
-      content: '';
-      position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.04;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
-    }
-    .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.025em; }
-    .italic-display { font-family: 'Fraunces', serif; font-style: italic; }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .rise { animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.25s; }
-    .delay-3 { animation-delay: 0.4s; }
-
-    .link-anim { position: relative; display: inline-block; }
-    .link-anim::after {
-      content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px;
-      background: currentColor; transform: scaleX(0); transform-origin: right;
-      transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-    }
-    .link-anim:hover::after { transform: scaleX(1); transform-origin: left; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background-color: #0c0a13; color: #d7d3e0; }
+    h1, h2, h3 { font-family: 'Fraunces', serif; color: #f4f1fb; letter-spacing: -0.01em; }
+    .prose-legal h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2.75rem; margin-bottom: 0.9rem; }
+    .prose-legal h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1.75rem; margin-bottom: 0.6rem; color: #c9bdf0; }
+    .prose-legal p { margin-bottom: 1rem; line-height: 1.75; }
+    .prose-legal ul { margin: 0.5rem 0 1.25rem; padding-left: 1.25rem; }
+    .prose-legal li { margin-bottom: 0.5rem; line-height: 1.7; }
+    .prose-legal ul li { list-style: none; position: relative; }
+    .prose-legal ul li::before { content: ''; position: absolute; left: -1rem; top: 0.7rem; width: 5px; height: 5px; border-radius: 9999px; background: var(--violet-light); }
+    .prose-legal a { color: var(--violet-light); text-decoration: underline; text-underline-offset: 2px; }
+    .prose-legal strong { color: #f4f1fb; font-weight: 600; }
+    .fill { background: rgba(110,64,201,0.18); border-radius: 4px; padding: 0 4px; color: #d9ccff; }
+    .callout { border: 1px solid rgba(154,109,240,0.4); background: rgba(110,64,201,0.12); border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.5rem 0 0.5rem; }
+    .callout strong { color: #f4f1fb; }
   </style>
 </head>
+<body class="antialiased">
 
-<body class="relative min-h-screen">
-
-  <nav class="relative z-10 px-6 sm:px-10 py-7 max-w-6xl mx-auto flex items-center justify-between">
-    <a href="index.html" class="flex items-baseline gap-2">
-      <span class="display text-2xl text-ink-100">Verid<span class="text-violet-light">AI</span></span>
-    </a>
-    <div class="flex items-center gap-7 text-sm text-ink-300">
-      <a href="index.html" class="link-anim hover:text-ink-100 transition-colors">Home</a>
-      <a href="privacy.html" class="link-anim hover:text-ink-100 transition-colors">Privacy</a>
+  <!-- Header -->
+  <header class="border-b border-white/10">
+    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg font-semibold text-white" style="background: linear-gradient(135deg, #6e40c9, #9a6df0);">V</span>
+        <span class="text-lg font-semibold text-white" style="font-family:'Fraunces',serif;">VeridAI</span>
+      </a>
+      <nav class="flex items-center gap-5 text-sm">
+        <a href="privacy.html" class="text-white/60 hover:text-white transition">Privacy</a>
+        <a href="terms.html" class="text-white">Terms</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main class="relative z-10 px-6 sm:px-10 py-16 sm:py-24 max-w-3xl mx-auto">
-    <p class="rise delay-1 text-sm tracking-[0.2em] uppercase text-violet-light/80 mb-6 font-medium">Terms &amp; disclaimer</p>
-    <h1 class="rise delay-2 display text-5xl sm:text-6xl text-ink-100 mb-10 leading-[1.05]">
-      A tool, <span class="italic-display text-violet-light">not a lawyer</span>.
-    </h1>
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 py-14">
+    <p class="text-sm uppercase tracking-widest text-violet-300/70 mb-3">Legal</p>
+    <h1 class="text-4xl sm:text-5xl font-semibold mb-4">Terms of Service</h1>
+    <p class="text-white/50 text-sm mb-12">Last updated: 8 June 2026</p>
 
-    <div class="rise delay-3 rounded-xl border border-amber-500/30 bg-amber-500/[0.04] p-8 sm:p-10 mb-12">
-      <p class="text-sm tracking-[0.18em] uppercase text-amber-300/90 mb-4 font-medium">Important disclaimer</p>
-      <p class="text-ink-100 text-lg leading-relaxed mb-4">
-        VeridAI is not a substitute for qualified legal advice.
-      </p>
-      <p class="text-ink-300 leading-relaxed">
-        The analyses, summaries, and answers VeridAI provides are produced by artificial intelligence and are intended as a general aid to understanding contract content — not as legal counsel. AI can make mistakes, miss context, or misinterpret jurisdiction-specific language. For any legally binding decision, dispute, or commitment of significant value, consult a qualified lawyer licensed in your jurisdiction.
-      </p>
-    </div>
+    <div class="prose-legal">
 
-    <div class="rise delay-3 mb-12">
-      <h2 class="display text-2xl text-ink-100 mb-5">Full terms in preparation</h2>
-      <p class="text-ink-300 leading-relaxed mb-4">
-        Our full terms of service are being finalized ahead of VeridAI's public launch. They'll cover acceptable use, account responsibilities, subscription and refund terms, intellectual property, limitation of liability, and the legal framework governing your use of the app.
-      </p>
-      <p class="text-ink-300 leading-relaxed">
-        The complete document will be published here before the app becomes available on the Google Play Store.
-      </p>
-    </div>
+      <p>These Terms of Service ("Terms") govern your use of the <strong>VeridAI</strong> mobile application and the website at veridai.app (together, the "Service"), provided by <strong>Foxar Ltd</strong> ("we", "us", "our"), a company registered in England and Wales (company number 17160803, registered office 24 Tremayne Road, Nottingham, NG8 4HQ).</p>
 
-    <div class="rise delay-3 mb-12">
-      <h2 class="display text-2xl text-ink-100 mb-5">In the meantime, the essentials</h2>
-      <ul class="space-y-4 text-ink-300 leading-relaxed">
-        <li class="pl-5 border-l border-violet/40">VeridAI is a contract analysis tool. It does not provide legal advice and does not establish an attorney-client relationship.</li>
-        <li class="pl-5 border-l border-violet/40">You are responsible for verifying the accuracy of any analysis before acting on it. Always consult a qualified lawyer for important decisions.</li>
-        <li class="pl-5 border-l border-violet/40">VeridAI is provided "as is" without warranties of any kind. Foxar Ltd is not liable for decisions made based on AI-generated output.</li>
-        <li class="pl-5 border-l border-violet/40">By using VeridAI you agree to use it lawfully and only for documents you have a legitimate right to access.</li>
+      <p>By creating an account or using the Service, you agree to these Terms. If you do not agree, please do not use the Service.</p>
+
+      <div class="callout">
+        <p style="margin-bottom:0;"><strong>Important — VeridAI does not provide legal advice.</strong> VeridAI is an informational tool that uses artificial intelligence to help you understand documents. It is not a law firm, it is not a substitute for a qualified lawyer or solicitor, and using it does not create a lawyer–client relationship. AI-generated output may be incomplete or incorrect. Always seek advice from a qualified legal professional before making decisions or signing any document.</p>
+      </div>
+
+      <h2>1. Eligibility</h2>
+      <p>You must be at least 16 years old (or the age of legal majority in your jurisdiction, if higher) to use the Service. By using it, you confirm that you meet this requirement and that you are able to enter into a binding agreement.</p>
+
+      <h2>2. The Service</h2>
+      <p>VeridAI lets you upload or scan documents and uses artificial intelligence to provide summaries, analysis and answers to questions about them. The Service is offered in several languages and across different subscription tiers (Free, Ad-Free and Premium). We may add, change or remove features at any time.</p>
+
+      <h2>3. Not legal advice and no reliance</h2>
+      <p>The content generated by VeridAI is provided for general information only. It does not constitute legal advice, and you should not rely on it as such. AI systems can produce inaccurate, incomplete or misleading results, and may misinterpret the meaning or legal effect of a document. You are solely responsible for any decision you make, and we strongly recommend consulting a qualified legal professional regarding any specific contract or legal matter.</p>
+
+      <h2>4. Your account</h2>
+      <p>To use certain features you must create an account. You are responsible for keeping your login credentials secure and for all activity that takes place under your account. Please notify us promptly at <a href="mailto:support@veridai.app">support@veridai.app</a> if you believe your account has been compromised.</p>
+
+      <h2>5. Subscriptions, billing and refunds</h2>
+      <ul>
+        <li><strong>Tiers.</strong> The Service offers a Free tier (with advertising) and paid Ad-Free and Premium tiers with additional features and usage limits.</li>
+        <li><strong>Billing.</strong> Paid subscriptions are sold and billed through the Google Play Store (and, in future, through our payments provider). Prices are shown before you purchase.</li>
+        <li><strong>Auto-renewal.</strong> Subscriptions renew automatically at the end of each billing period unless you cancel at least 24 hours before the period ends.</li>
+        <li><strong>Cancellation.</strong> You can cancel at any time through your Google Play account settings. Cancellation takes effect at the end of the current billing period, and you keep access until then.</li>
+        <li><strong>Refunds.</strong> Refunds are handled in accordance with the Google Play Store's refund policy and your statutory rights. We do not separately control payments made through the store.</li>
       </ul>
-    </div>
 
-    <div class="rise delay-3 text-ink-300 leading-relaxed">
-      <p class="mb-4">
-        Questions about these terms? Reach us at
-        <a href="mailto:support@veridai.app" class="text-violet-light hover:text-ink-100 transition-colors link-anim">support@veridai.app</a>.
-      </p>
-      <p class="text-sm text-ink-300/70 mt-10">
-        VeridAI is operated by Foxar Ltd, registered in the United Kingdom.
-      </p>
+      <h2>6. Your content and responsibilities</h2>
+      <p>You retain ownership of the documents and content you upload ("Your Content"). By submitting Your Content, you grant us a limited licence to process, transmit and store it solely to provide the Service to you, as described in our <a href="privacy.html">Privacy Policy</a>.</p>
+      <p>You represent that you have the right to upload Your Content and that doing so does not infringe the rights of any third party or breach any confidentiality obligation. You are responsible for ensuring you are permitted to share any document you submit.</p>
+
+      <h2>7. Acceptable use</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>use the Service for any unlawful, fraudulent or harmful purpose;</li>
+        <li>upload content you do not have the right to share, or that is malicious or unlawful;</li>
+        <li>attempt to reverse engineer, disrupt, overload or gain unauthorised access to the Service;</li>
+        <li>use the Service to build or train a competing product, or to scrape or extract data at scale;</li>
+        <li>misrepresent the Service's output as professional legal advice to others.</li>
+      </ul>
+
+      <h2>8. Intellectual property</h2>
+      <p>The Service, including the VeridAI name, logo, software, design and content (other than Your Content), is owned by Foxar Ltd and protected by intellectual property laws. We grant you a personal, non-exclusive, non-transferable, revocable licence to use the Service in accordance with these Terms. All rights not expressly granted are reserved.</p>
+
+      <h2>9. Disclaimers</h2>
+      <p>The Service is provided on an "as is" and "as available" basis. To the fullest extent permitted by law, we make no warranties of any kind, whether express or implied, including as to accuracy, reliability, fitness for a particular purpose or availability. We do not warrant that the Service will be uninterrupted, error-free or that any AI-generated output will be accurate or complete.</p>
+
+      <h2>10. Limitation of liability</h2>
+      <p>Nothing in these Terms excludes or limits our liability for death or personal injury caused by negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot be excluded or limited under the law of England and Wales.</p>
+      <p>Subject to the above, and to the fullest extent permitted by law:</p>
+      <ul>
+        <li>we are not liable for any indirect, incidental, special or consequential loss, or for any loss of profit, revenue, data, goodwill or business arising from your use of, or inability to use, the Service;</li>
+        <li>we are not liable for any decision you make, or action you take or fail to take, in reliance on AI-generated output;</li>
+        <li>our total aggregate liability arising out of or in connection with the Service in any 12-month period will not exceed the greater of the amount you paid us for the Service during that period and £50.</li>
+      </ul>
+
+      <h2>11. Indemnity</h2>
+      <p>You agree to indemnify and hold harmless Foxar Ltd from any claims, losses or expenses arising from your breach of these Terms, your misuse of the Service, or your violation of any law or the rights of a third party.</p>
+
+      <h2>12. Suspension and termination</h2>
+      <p>You may stop using the Service and close your account at any time. We may suspend or terminate your access if you breach these Terms, if required by law, or if necessary to protect the Service or other users. On termination, your right to use the Service ends, though provisions that by their nature should survive (such as those on intellectual property, disclaimers and liability) will remain in effect.</p>
+
+      <h2>13. Changes to the Service and these Terms</h2>
+      <p>We may modify the Service or these Terms from time to time. When we make material changes to these Terms, we will update the "Last updated" date above and, where appropriate, notify you within the app. Your continued use of the Service after changes take effect constitutes acceptance of the updated Terms.</p>
+
+      <h2>14. Governing law and jurisdiction</h2>
+      <p>These Terms are governed by the laws of England and Wales. The courts of England and Wales will have exclusive jurisdiction over any dispute, although if you are a consumer resident elsewhere you may also be entitled to bring proceedings in your country of residence and benefit from any mandatory protections of its law.</p>
+
+      <h2>15. Contact us</h2>
+      <p>If you have any questions about these Terms, please contact us at <a href="mailto:support@veridai.app">support@veridai.app</a>.</p>
+
     </div>
   </main>
 
-  <footer class="relative z-10 px-6 sm:px-10 py-12 max-w-6xl mx-auto border-t border-ink-500/15 mt-20">
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-      <p class="text-xs text-ink-300/70">© <span id="year"></span> Foxar Ltd. All rights reserved.</p>
-      <div class="flex gap-6 text-sm">
-        <a href="index.html" class="text-ink-300 hover:text-violet-light transition-colors">Home</a>
-        <a href="privacy.html" class="text-ink-300 hover:text-violet-light transition-colors">Privacy</a>
-        <a href="mailto:support@veridai.app" class="text-ink-300 hover:text-violet-light transition-colors">Contact</a>
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/40">
+      <p>© 2026 Foxar Ltd. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+        <a href="terms.html" class="hover:text-white transition">Terms</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
